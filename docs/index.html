@@ -11,12 +11,14 @@
                 var u=c[o];r="t"===u.type?r.then(u.next):r.catch(u.next)}p&&n.render.apply(n,p),a&&n.destroy.apply(n,a);for(o=0;o<i.length;o++)n.on.apply(n,i[o])};
                 var u=new XMLHttpRequest;u.addEventListener("load",o),u.open("GET","https://"+r+".webloader.smooch.io/",!0),u.responseType="json",u.send()
             }(window,document,"Smooch","5be0a05d88e4b900229d85f9")
-        </script>        
+        </script>
+        <script src="smooch-chat.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         Keep Chatting
         <script>
-            Smooch.init({ appId: '5be0a05d88e4b900229d85f9' });
+            startChat();
         </script>
     </body>
 
