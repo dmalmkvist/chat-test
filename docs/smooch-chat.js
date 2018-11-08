@@ -2,6 +2,12 @@
 const SMOOCH_APP_ID = '5be0a05d88e4b900229d85f9';
 
 var authenticate = function(cb) {
+    let authResponse = localStorage.getItem('sessionToken');
+    if (authResponse) {
+        cb(JSON.parse(authResponse));
+        return;
+    }
+    
     $.ajax({
         url: 'http://localhost:8001/api/smooch/v1/authenticate',
         type: 'POST',
@@ -11,9 +17,11 @@ var authenticate = function(cb) {
             email: 'test@example.com',
             name: "Carl Sagan",
             loginDomain: "example.org",
-            appId: SMOOCH_APP_ID
+            appId: SMOOCH_APP_ID,
+            userId: 'user Id from cookie'
         }),
         success: function(response) {
+            localStorage.setItem('sessionToken', JSON.stringify(response))
             cb(response)
         },
         error: function() {
