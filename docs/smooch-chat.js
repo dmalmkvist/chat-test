@@ -32,7 +32,7 @@ var authenticate = function(cb) {
 
 var initSmooch = function(cb) {
     // To have our own UI
-    Smooch.init({ appId: SMOOCH_APP_ID, embedded: true }).then(cb);
+    Smooch.init({ appId: SMOOCH_APP_ID, embedded: false }).then(cb);
 
     // To use Smooch UI
     //Smooch.init({ appId: SMOOCH_APP_ID }).then(cb);
@@ -82,6 +82,6 @@ startChat = function() {
     });
 
     // If this is not called then the Smooch.init() callback will not be called
-    Smooch.render(document.getElementById('chat-container'));
+    //Smooch.render(document.getElementById('chat-container'));
 
 }
