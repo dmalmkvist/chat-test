@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Gladly Snippet install sample</title>
+    <style type="text/css">
+        body {
+            background-image: url(./img/toryburchbg.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-clip: padding-box;
+            background-origin: border-box;
+            background-size: 500px;
+            box-sizing: border-box;
+        }
+    </style>
+    <script type="text/javascript">
+    window.gladlyConfig = {
+  appId: 'cf6980f8-731d-11e8-9a85-dfef1dc03bd2',
+  layerAppEnv: 'staging',
+  gladlyCdn: 'https://cdn.gladly.qa',
+};
+</script>
+    <script type="text/javascript">
+    function l() {
+  var t = document,
+    e = t.createElement('script');
+  (e.type = 'text/javascript'),
+    (e.async = !0),
+    (e.src = 'https://cdn.gladly.qa/gladly/chat-sdk/widget.js?q=' + new Date().getTime());
+  var a = t.getElementsByTagName('script')[0];
+  a.parentNode.insertBefore(e, a);
+}
+var w = window;
+w.gladlyLoaded ||
+  (w.attachEvent ? w.attachEvent('onload', l) : w.addEventListener('load', l, !1), (w.gladlyLoaded = !0));
+</script>
+</head>
+
+<body>
+    <div class="background"></div>
+</body>
+
+</html>
