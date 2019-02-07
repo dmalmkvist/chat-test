@@ -1,5 +1,5 @@
 
-const SMOOCH_APP_ID = '5be0a05d88e4b900229d85f9';
+const SMOOCH_APP_ID = '5c352675c3fb4f002ee37d58';
 
 var authenticate = function(cb) {
     let authResponse = localStorage.getItem('sessionToken');
@@ -73,12 +73,14 @@ startChat = function() {
             let jwt = authResponse.jwt;
             loginToSmooch(userId, jwt, function() {
                 attachGladlyCustomerId(gladlyCustomerId);
-                sendMessage(gladlyCustomerId, 'This is working great!');
+                //sendMessage(gladlyCustomerId, 'This is working great!');
                 console.log("SUCCESS");
             }, function() {
                 console.log("FAILURE :(");
             });
         })
+        //Smooch.on('typing:start', data => console.log('start', data))
+        //Smooch.on('typing:stop', data => console.log('stop', data))
     });
 
     // If this is not called then the Smooch.init() callback will not be called
