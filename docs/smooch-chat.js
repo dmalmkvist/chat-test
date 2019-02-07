@@ -47,7 +47,8 @@ var attachGladlyCustomerId = function(gladlyCustomerId) {
     Smooch.setDelegate({
         beforeSend: (message) => {
             message.metadata = {
-                gladlyCustomerId: gladlyCustomerId
+                gladlyCustomerId: gladlyCustomerId,
+                subType: 'TEXT',
             };
             return message;
         }
