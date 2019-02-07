@@ -1,5 +1,5 @@
 
-const SMOOCH_APP_ID = '5c352675c3fb4f002ee37d58';
+const SMOOCH_APP_ID = '5c3e5a95e610000028c6dea3';
 
 var authenticate = function(cb) {
     let authResponse = localStorage.getItem('sessionToken');
