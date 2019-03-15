@@ -32,19 +32,19 @@ var authenticate = function(cb) {
 
 var initSmooch = function(cb) {
     // To have our own UI
-    Smooch.init({ appId: SMOOCH_APP_ID, embedded: false }).then(cb);
+    GladlyInc.init({ appId: SMOOCH_APP_ID, embedded: false }).then(cb);
 
     // To use Smooch UI
-    //Smooch.init({ appId: SMOOCH_APP_ID }).then(cb);
+    //GladlyInc.init({ appId: SMOOCH_APP_ID }).then(cb);
 }
 
 var loginToSmooch = function(userId, jwt, onSuccess, onError) {
-    Smooch.login(userId, jwt)
+    GladlyInc.login(userId, jwt)
     .then(onSuccess, onError);
 }
 
 var attachGladlyCustomerId = function(gladlyCustomerId) {
-    Smooch.setDelegate({
+    GladlyInc.setDelegate({
         beforeSend: (message) => {
             message.metadata = {
                 gladlyCustomerId: gladlyCustomerId,
@@ -57,7 +57,7 @@ var attachGladlyCustomerId = function(gladlyCustomerId) {
 
 var sendMessage = function(gladlyCustomerId, message) {
     console.log('Sending message to: ' + gladlyCustomerId + ', msg: ' + message);
-    Smooch.sendMessage({
+    GladlyInc.sendMessage({
         type: 'text',
         text: message
     })
